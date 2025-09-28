@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+MERN Stack – Task 1: Basic React Application
+Project Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is part of MERN Stack Task 1.
 
-## Available Scripts
+1.The goal is to build a basic React application to:
+2.Understand React project setup and structure
+3.Create and use components
+4.Learn JSX, state, and props
+5.Practice the development workflow (npm start, hot reloading)
 
-In the project directory, you can run:
+Project Setup
 
-### `npm start`
+Created the React app:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+npx create-react-app mainflow
+cd mainflow
+npm start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Confirmed the development server started at http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+File & Folder Structure
 
-### `npm run build`
+src/ → Main app code (components, CSS, logic).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+public/ → Static files (e.g., index.html, favicon).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+node_modules/ → Dependencies (auto-installed).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+package.json → Defines dependencies and scripts.
 
-### `npm run eject`
+package-lock.json → Locks dependency versions.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+.gitignore → Files ignored by Git (e.g., node_modules/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+README.md → Documentation for the project (this file).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Created Component
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+File: src/Hello.js
 
-## Learn More
+import React, { useState } from "react";
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+function Hello(props) {
+  const [count, setCount] = useState(0);
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  return (
+    <div style={{ padding: "20px", textAlign: "center" }}>
+      <h2>Hello, {props.name}!</h2>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click Me</button>
+    </div>
+  );
+}
 
-### Code Splitting
+export default Hello;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Integrated into App.js:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+import React from "react";
+import Hello from "./Hello";
 
-### Making a Progressive Web App
+function App() {
+  return (
+    <div>
+      <Hello name="Student" />
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+export default App;
 
-### Advanced Configuration
+🔄 Development Workflow
+Start server: npm start
+Open app: http://localhost:3000
+Code changes reflect instantly in the browser (hot reloading).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Observations & Learnings
 
-### Deployment
+Learned about default React folder structure and purpose of each file.
+Built a simple component using JSX, state, and props.
+Understood how props pass data and state manages dynamic changes.
+Saw how hot reloading makes development faster.
+Gained confidence in React basics and workflow.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Author: [Harshitha Lanka]
