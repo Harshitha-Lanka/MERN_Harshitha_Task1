@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from 'react'
 
-function Hello(props) {
-  const [count, setCount] = useState(0);
-
+const Hello = () => {
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Hello, {props.name}! Welcome to React Project</h2>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click Me</button>
-    </div>
-  );
+   <div>
+    Name:<input type="text"/>
+    <button>Increase</button>
+   </div>
+  )
 }
 
-export default Hello;
+export default Hello
